@@ -14,7 +14,7 @@ public class Job {
     private CoreCompetency coreCompetency;
 
     public Job() {
-        this.id = id;
+        id = nextId;
         nextId++;
     }
 
