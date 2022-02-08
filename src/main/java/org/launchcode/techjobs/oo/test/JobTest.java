@@ -51,6 +51,13 @@ public class JobTest {
         assertFalse(testJob3.equals(testJob4));
     }
 
+    @Test
+    public void testJobHasBlankLines() {
+        char char1 = testJob3.toString().charAt(0);
+        char char2 = testJob3.toString().charAt(testJob3.toString().length()-1);
+        assertEquals(char1, char2);
+    }
+
 
 //    objectName instanceof ClassName
 //    @Test
