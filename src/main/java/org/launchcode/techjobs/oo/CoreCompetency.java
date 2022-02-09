@@ -2,19 +2,20 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class CoreCompetency {
+public class CoreCompetency extends JobField{
 
     private int id;
-    private static int nextId = 1;
+//    private static int nextId = 1;
     private String value;
 
-    public CoreCompetency() {
-        this.id = nextId;
-        nextId++;
-    }
+//    public CoreCompetency() {
+//        this.id = nextId;
+//        nextId++;
+//    }
 
     public CoreCompetency(String value) {
-        this();
+//        this();
+        super(value);
         if (value.equals("")) {
             this.value = "Data not available";
         } else {
@@ -22,7 +23,7 @@ public class CoreCompetency {
         }
     }
 
-    // Custom toString, equals, and hashCode methods:
+//     Custom toString, equals, and hashCode methods:
 
     @Override
     public String toString() {
@@ -42,9 +43,9 @@ public class CoreCompetency {
         return Objects.hash(id);
     }
 
-    public int getId() {
-        return id;
-    }
+//    public int getId() {
+//        return id;
+//    }
 
     public String getValue() {
         return value;
