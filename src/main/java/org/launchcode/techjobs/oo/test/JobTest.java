@@ -19,6 +19,7 @@ public class JobTest {
     private Job testJob2;
     private Job testJob3;
     private Job testJob4;
+    private Job testJob5;
 
     @Before
     public void createJobObject() {
@@ -28,6 +29,8 @@ public class JobTest {
                new PositionType("Quality control"), new CoreCompetency("Persistence"));
        testJob4 = new Job("Product tester", new Employer("ACME"), new Location ("Desert"),
                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        testJob5 = new Job("Product tester", new Employer("ACME"), new Location ("Desert"),
+                new PositionType("Quality control"), new CoreCompetency(""));
 
     }
 
@@ -58,12 +61,16 @@ public class JobTest {
         assertEquals(char1, char2);
     }
 
+    @Test
+    public void testJobFormattedCorrectly() {
+        assertTrue(testJob1.toString().startsWith("\n"));
+        assertTrue(testJob1.toString().endsWith("\n"));
+    }
 
-//    objectName instanceof ClassName
-//    @Test
-//    public void testInitialGasTank() {
-//        Car test_car = new Car("Toyota", "Prius", 10, 50);
-//        assertEquals(10, test_car.getGasTankLevel(), .001);
-//    }
+    @Test
+    public void testJobSaysDataNotAvailable() {
+//        assertTrue(testJob5.getCoreCompetency().toString(),"Data not available");
+    assertSame(testJob5.getCoreCompetency().toString(),"Data not available");
+    }
 }
 

@@ -20,7 +20,11 @@ public class Job {
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
-        this.name = name;
+        if (name.equals("")) {
+            this.name = "Data not available";
+        } else {
+            this.name = name;
+        }
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
@@ -76,25 +80,37 @@ public class Job {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return id == job.id && name.equals(job.name) && employer.equals(job.employer) && location.equals(job.location)
-                && positionType.equals(job.positionType) && coreCompetency.equals(job.coreCompetency);
+        return id == job.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
+        return Objects.hash(id);
     }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Job job = (Job) o;
+//        return id == job.id && name.equals(job.name) && employer.equals(job.employer) && location.equals(job.location)
+//                && positionType.equals(job.positionType) && coreCompetency.equals(job.coreCompetency);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
+//    }
 
     @Override
     public String toString() {
-        return "\n Job{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", employer=" + employer +
-                ", location=" + location +
-                ", positionType=" + positionType +
-                ", coreCompetency=" + coreCompetency +
-                '}' + " \n";
+
+        return "\n" +  "ID: " + id +
+                "\nName: '" + name +
+                "\nEmployer: " + employer +
+                "\nLocation: " + location +
+                "\nPositionType: " + positionType +
+                "\nCore Competency: " + coreCompetency +
+                " \n";
 
     }
 
