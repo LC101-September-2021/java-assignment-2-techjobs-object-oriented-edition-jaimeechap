@@ -56,9 +56,20 @@ public class JobTest {
 
     @Test
     public void testJobHasBlankLines() {
-        char char1 = testJob3.toString().charAt(0);
-        char char2 = testJob3.toString().charAt(testJob3.toString().length()-1);
-        assertEquals(char1, char2);
+//        char char1 = testJob3.toString().charAt(0);
+//        char char2 = testJob3.toString().charAt(testJob3.toString().length()-1);
+//        assertEquals(char1, char2);
+        assertEquals("\nID: 3\n" +
+                "Name: 'Product tester\n" +
+                "Employer: ACME\n" +
+                "Location: Desert\n" +
+                "PositionType: Quality control\n" +
+                "Core Competency: Persistence \n", testJob3.toString());
+//        System.out.println(testJob3.toString());
+
+//        figure out what to compare this to
+//        "Product tester", new Employer("ACME"), new Location ("Desert"),
+//                new PositionType("Quality control"), new CoreCompetency("Persistence"))
     }
 
     @Test
